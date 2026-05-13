@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: #0A0A0A;
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-dark font-medium px-8 py-3 rounded-lg transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-gold-dark shadow-lg transform -translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-gold text-gold font-medium px-8 py-3 rounded-lg transition-all duration-300;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-gold text-dark;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24;
+  }
+  
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+  
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-2xl;
+  }
+  
+  .image-zoom {
+    @apply transition-transform duration-700 ease-out;
+  }
+  
+  .image-zoom:hover {
+    @apply scale-105;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8960C;
+}
+
+/* Hair strand animation */
+@keyframes hairStrand {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+}
+
+.hair-strand {
+  animation: hairStrand 4s ease-in-out infinite;
+}
